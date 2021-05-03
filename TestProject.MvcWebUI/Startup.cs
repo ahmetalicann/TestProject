@@ -98,6 +98,11 @@ namespace TestProject.MvcWebUI
                 // The default HSTS value is 30 days. You may want to change this for production scenarios, see https://aka.ms/aspnetcore-hsts.
                 app.UseHsts();
             }
+
+            //Configure ettiðimiz authentication devreye girmesi için bunlarý tanýtmamýz gerek.
+            app.UseAuthentication();
+            app.UseCookiePolicy();
+
             app.UseHttpsRedirection();
             app.UseStaticFiles();
 
