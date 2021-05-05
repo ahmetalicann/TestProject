@@ -16,6 +16,7 @@ using TestProject.Business.Concrete.Managers;
 using TestProject.DataAccess.Abstract;
 using TestProject.DataAccess.Concrete.EntityFrameworkCore;
 using TestProject.MvcWebUI.Identity;
+using TestProject.MvcWebUI.Services;
 
 namespace TestProject.MvcWebUI
 {
@@ -81,6 +82,9 @@ namespace TestProject.MvcWebUI
 
             services.AddScoped<IProductImageService, ProductImageManager>();
             services.AddScoped<IProductImageDal, EfProductImageDal>();
+
+            services.AddScoped<IEmailConfiguration, EmailConfiguration>();
+            services.AddScoped<IMailService, MailManager>();
 
             services.AddControllersWithViews();
         }
